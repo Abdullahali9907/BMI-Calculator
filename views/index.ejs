@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs") %>
+
+<h1>BMI CALCULATOR 🧮</h1>
+
+<p>
+  Welcome to the BMI Calculator, a user-friendly tool designed by Abdullah Ali
+  to help you quickly and accurately calculate your Body Mass Index (BMI). Using
+  advanced algorithms, this calculator takes your height and weight to provide a
+  precise BMI score, offering insights into your overall health.
+</p>
+<p>
+  The BMI Calculator is built with a robust tech stack that includes HTML, CSS,
+  JavaScript, Node.js, Express, and EJS. Every aspect of the tool has been
+  carefully crafted to ensure a seamless user experience, from the intuitive
+  design to the efficient calculations. We are committed to providing a reliable
+  and efficient tool to assist you in managing your health. All rights to this
+  innovative solution are reserved by Mohd Abdullah. We hope you find this tool
+  helpful and easy to use as you take steps towards a healthier lifestyle.
+</p>
+
+<!-- Condition 1  -->
+<h2>
+  <% if(locals.BMIResult <= 16) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you are underweight. Try to gain some weight
+    🦴.
+  </h2>
+  <% } else if(locals.BMIResult >= 17 && locals.BMIResult < 19 ) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you are little underweight. Try to gain some
+    weight 💪.
+  </h2>
+  <% } else if(locals.BMIResult >= 19 && locals.BMIResult < 26 ) { %>
+  <h2>Your BMI is :- <%= BMIResult %> you are Healthy/Normal ❤️.</h2>
+  <% } else if(locals.BMIResult >= 26 && locals.BMIResult < 31 ) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you have a minor Obesity 🫃🤰. Do exercise
+    Daily.
+  </h2>
+  <% } else if(locals.BMIResult >= 31 && locals.BMIResult < 36 ) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you have a Class I Obesity 🫃😅🤰. Do
+    exercise Daily and consult a doctor.
+  </h2>
+  <% } else if(locals.BMIResult >= 36 && locals.BMIResult < 41 ) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you have a Class II Obesity 🤰😅🫃. Do
+    exercise Daily and consult a doctor immediately.
+  </h2>
+  <% } else if(locals.BMIResult >= 41 && locals.BMIResult < 50 ) { %>
+  <h2>
+    Your BMI is :- <%= BMIResult %> you have a Class III Obesity.You will be
+    Dying Soon 😥😪.
+  </h2>
+  <% } else{ %>
+  <h2>BMI result displayed here</h2>
+  <% } %>
+
+  <form action="/submit" method="post">
+    <input type="number" name="weight" placeholder="Enetr Weight in kg" />
+    <input type="text" name="height" placeholder="Enetr Height in Mt" />
+    <input type="submit" value="Get BMI" />
+  </form>
+
+  <%- include("partials/footer.ejs") %>
+</h2>
