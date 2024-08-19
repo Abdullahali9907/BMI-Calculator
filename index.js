@@ -38,7 +38,27 @@ const height = req.body["height"];
  res.render("index.ejs", {
   BMIResult : BMIResult
  } );
+});
+
+
+app.post("/submitContact", (req,res)=>{
+//  console.log("Conatct form has been clicked.");
+const contactUserName = req.body["name"];
+const contactUserEmail = req.body["email"];
+const contactUserComment = req.body["text"];
+console.log("The value of name is : - ", contactUserName);
+console.log("The value of Email is : - ", contactUserEmail);
+console.log("The value of comment is : - ", contactUserComment);
+
+
+res.render("contact.ejs", {
+  contactUserName : (contactUserName),
+  contactUserEmail : contactUserEmail,
+  contactUserComment : contactUserComment
 })
+
+ 
+});
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

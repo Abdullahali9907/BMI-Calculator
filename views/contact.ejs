@@ -1,9 +1,17 @@
 <%- include("./partials/header.ejs") %>
 <h1>Any Query Contacct Us 🔍</h1>
-<form>
+<form action="/submitContact" method="post">
   <input name="name" type="text" class="feedback-input" placeholder="Name" />
   <input name="email" type="text" class="feedback-input" placeholder="Email" />
   <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
   <input type="submit" value="SUBMIT" />
 </form>
+
+ <h2> <%   if(locals.contactUserName || locals.contactUserEmail || locals.contactUserComment) { %>
+  <h3> Username :-  <%= contactUserName %> </h3>
+  <h3> Email :- <%= contactUserEmail %> </h3>
+  <h3> Comment :- <%= contactUserComment %> </h3>
+ <% } else{ %>
+ <h3> Your Form Detils will be shown here when you submit the details..... shortly</h3>
+  <% } %></h2>
 <%- include("./partials/footer.ejs") %>

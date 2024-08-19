@@ -31,15 +31,15 @@ p {
 .profile {
   height: 200px;
   width: 200px;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit : fit;
+  border-radius: 50%
 }
 form {
   margin-top: 50px;
 }
 
 .feedback-input {
-  color: white;
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-size: 18px;
   border-radius: 5px;
