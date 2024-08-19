@@ -33,7 +33,7 @@ const height = req.body["height"];
 // console.log("The value of weight is :- ",(weight));
 // console.log("The value of height is :- ",(height));
 
- const BMIResult = Math.round(weight / (height * height).toFixed(2));
+ const BMIResult = parseFloat(weight / (height * height)).toFixed(2);
 
  res.render("index.ejs", {
   BMIResult : BMIResult
